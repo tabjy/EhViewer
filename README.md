@@ -1,8 +1,8 @@
-# DEPRECATED
-
 [![Telegram](https://img.shields.io/badge/chat-Telegram-blue.svg)](https://t.me/ehviewer)
 
 # EhViewer
+
+a fork of [seven332/EhViewer](https://github.com/seven332/EhViewer) maintained by [tabjy](https://github.com/tabjy)
 
 ![Icon](art/launcher_icon-web.png)
 
@@ -37,9 +37,9 @@ The apk is in app\build\outputs\apk
 
 # Download
 
-[下载](https://github.com/seven332/EhViewer/releases)
+[下载](https://github.com/tabjy/EhViewer/releases)
 
-[Download](https://github.com/seven332/EhViewer/releases)
+[Download](https://github.com/tabjy/EhViewer/releases)
 
 
 # Thanks
