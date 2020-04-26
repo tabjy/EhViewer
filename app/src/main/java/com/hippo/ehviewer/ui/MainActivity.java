@@ -22,6 +22,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -144,14 +145,30 @@ public final class MainActivity extends StageActivity
 
     @Override
     protected int getThemeResId(int theme) {
+        if (theme == Settings.THEME_SYSTEM_DEFAULT) {
+            int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            switch (currentNightMode) {
+                case Configuration.UI_MODE_NIGHT_NO:
+                default:
+                    theme = Settings.THEME_LIGHT;
+                    break;
+                case Configuration.UI_MODE_NIGHT_YES:
+                    theme = Settings.THEME_DARK;
+            }
+        }
+
         switch (theme) {
             case Settings.THEME_LIGHT:
             default:
                 return R.style.AppTheme_Main;
             case Settings.THEME_DARK:
-                return R.style.AppTheme_Main_Dark;
-            case Settings.THEME_BLACK:
-                return R.style.AppTheme_Main_Black;
+                switch (Settings.getDarkThemeVariant()) {
+                    case Settings.DARK_THEME_VARIANT_DARK:
+                    default:
+                        return R.style.AppTheme_Main_Dark;
+                    case Settings.DARK_THEME_VARIANT_BLACK:
+                        return R.style.AppTheme_Main_Black;
+                }
         }
     }
 
@@ -377,8 +394,8 @@ public final class MainActivity extends StageActivity
             case Settings.THEME_DARK:
                 resId = R.string.theme_dark;
                 break;
-            case Settings.THEME_BLACK:
-                resId = R.string.theme_black;
+            case Settings.THEME_SYSTEM_DEFAULT:
+                resId = R.string.theme_system_default;
                 break;
         }
         return getString(resId);
@@ -390,8 +407,8 @@ public final class MainActivity extends StageActivity
             case Settings.THEME_LIGHT:
                 return Settings.THEME_DARK;
             case Settings.THEME_DARK:
-                return Settings.THEME_BLACK;
-            case Settings.THEME_BLACK:
+                return Settings.THEME_SYSTEM_DEFAULT;
+            case Settings.THEME_SYSTEM_DEFAULT:
                 return Settings.THEME_LIGHT;
         }
     }

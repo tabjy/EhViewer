@@ -537,7 +537,8 @@
     <string name="settings_eh_theme">Theme</string>
     <string name="settings_eh_theme_light">Weiß</string>
     <string name="settings_eh_theme_dark">Dunkel</string>
-    <string name="settings_eh_theme_black">Schwarz</string>
+    <string name="settings_eh_dark_theme_variant_dark">Dunkel</string>
+    <string name="settings_eh_dark_theme_variant_black">Schwarz</string>
     <string name="settings_eh_apply_nav_bar_theme_color">Theme-Farbe in Navigation-Bar anwenden</string>
     <string name="settings_about_donate_message">Du bekommest kein Privileg davon. Deine Spende hilft mir dabei, diese App instand zu halten.</string>
     <string name="settings_about_donate_alipay">Alipay</string>

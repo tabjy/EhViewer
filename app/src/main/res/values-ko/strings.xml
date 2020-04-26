@@ -22,7 +22,6 @@
     <!-- Theme -->
     <string name="theme_light">밝은 테마</string>
     <string name="theme_dark">어두운 테마</string>
-    <string name="theme_black">검정색 테마</string>
 
     <string name="homepage">홈</string>
     <string name="whats_hot">인기 갤러리</string>
@@ -372,7 +371,9 @@
     <string name="settings_eh_theme">테마</string>
     <string name="settings_eh_theme_light">밝은 테마</string>
     <string name="settings_eh_theme_dark">어두운 테마</string>
-    <string name="settings_eh_theme_black">검정색 테마</string>
+    <string name="settings_eh_theme_system_default">시스템 기본값</string>
+    <string name="settings_eh_dark_theme_variant_dark">어두운 테마</string>
+    <string name="settings_eh_dark_theme_variant_black">검정색 테마</string>
     <string name="settings_eh_apply_nav_bar_theme_color">내비게이션 바에 테마 색상 적용</string>
     <string name="settings_eh_gallery_site">갤러리 사이트</string>
     <string name="settings_eh_list_mode">목록 모드</string>

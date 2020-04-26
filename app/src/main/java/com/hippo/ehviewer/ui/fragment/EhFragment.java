@@ -35,6 +35,7 @@ public class EhFragment extends PreferenceFragment
         addPreferencesFromResource(R.xml.eh_settings);
 
         Preference theme = findPreference(Settings.KEY_THEME);
+        Preference darkThemeVariant = findPreference(Settings.KEY_DARK_THEME_VARIANT);
         Preference applyNavBarThemeColor = findPreference(Settings.KEY_APPLY_NAV_BAR_THEME_COLOR);
         Preference gallerySite = findPreference(Settings.KEY_GALLERY_SITE);
         Preference listMode = findPreference(Settings.KEY_LIST_MODE);
@@ -44,6 +45,7 @@ public class EhFragment extends PreferenceFragment
         Preference tagTranslationsSource = findPreference("tag_translations_source");
 
         theme.setOnPreferenceChangeListener(this);
+        darkThemeVariant.setOnPreferenceChangeListener(this);
         applyNavBarThemeColor.setOnPreferenceChangeListener(this);
         gallerySite.setOnPreferenceChangeListener(this);
         listMode.setOnPreferenceChangeListener(this);
@@ -65,6 +67,9 @@ public class EhFragment extends PreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String key = preference.getKey();
         if (Settings.KEY_THEME.equals(key)) {
+            ((EhApplication) getActivity().getApplication()).recreate();
+            return true;
+        } else if (Settings.KEY_DARK_THEME_VARIANT.endsWith(key)) {
             ((EhApplication) getActivity().getApplication()).recreate();
             return true;
         } else if (Settings.KEY_APPLY_NAV_BAR_THEME_COLOR.equals(key)) {

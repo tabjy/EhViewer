@@ -22,7 +22,6 @@
     <!-- Theme -->
     <string name="theme_light">ธีมสีสว่าง</string>
     <string name="theme_dark">ธีมสีมืด</string>
-    <string name="theme_black">ธีมสีดำ</string>
 
     <string name="homepage">หน้าหลัก</string>
     <string name="whats_hot">เรื่องที่กำลังมาแรงมากๆ</string>
@@ -390,7 +389,8 @@
     <string name="settings_eh_theme">ธีม</string>
     <string name="settings_eh_theme_light">สว่าง</string>
     <string name="settings_eh_theme_dark">มืด</string>
-    <string name="settings_eh_theme_black">ดำ</string>
+    <string name="settings_eh_dark_theme_variant_dark">มืด</string>
+    <string name="settings_eh_dark_theme_variant_black">ดำ</string>
     <string name="settings_eh_apply_nav_bar_theme_color">ใช้สีของธีมบนแถบนำทางด้วย</string>
     <string name="settings_eh_gallery_site">เว็บไซต์หลักของแกลเลอรี่</string>
     <string name="settings_eh_list_mode">มุมองแบบรายการ</string>

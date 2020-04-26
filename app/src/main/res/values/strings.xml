@@ -25,7 +25,7 @@
     <!-- Theme -->
     <string name="theme_light">Light Theme</string>
     <string name="theme_dark">Dark Theme</string>
-    <string name="theme_black">Black Theme</string>
+    <string name="theme_system_default">System Default Theme</string>
 
     <!-- Category -->
     <string name="doujinshi" translatable="false">DOUJINSHI</string>
@@ -479,7 +479,10 @@
     <string name="settings_eh_theme">Theme</string>
     <string name="settings_eh_theme_light">Light</string>
     <string name="settings_eh_theme_dark">Dark</string>
-    <string name="settings_eh_theme_black">Black</string>
+    <string name="settings_eh_theme_system_default">System Default</string>
+    <string name="settings_eh_dark_theme_variant">Dark Theme Variant</string>
+    <string name="settings_eh_dark_theme_variant_dark">Dark</string>
+    <string name="settings_eh_dark_theme_variant_black">Black</string>
     <string name="settings_eh_apply_nav_bar_theme_color">Apply theme color to navigation bar</string>
     <string name="settings_eh_gallery_site">Gallery site</string>
     <string name="settings_eh_launch_page">Launch page</string>

@@ -57,6 +57,14 @@
         app:entryValues="@array/theme_entry_values"
         android:defaultValue="0"/>
 
+    <com.hippo.preference.ListPreference
+        android:key="dark_theme_variant"
+        android:title="@string/settings_eh_dark_theme_variant"
+        android:summary="%s"
+        app:entries="@array/dark_theme_variant_entries"
+        app:entryValues="@array/dark_theme_variant_entry_values"
+        android:defaultValue="0" />
+
     <com.hippo.preference.SwitchPreference
         android:key="apply_nav_bar_theme_color"
         android:title="@string/settings_eh_apply_nav_bar_theme_color"

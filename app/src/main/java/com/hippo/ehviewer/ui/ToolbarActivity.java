@@ -16,6 +16,7 @@
 
 package com.hippo.ehviewer.ui;
 
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,14 +31,30 @@ public abstract class ToolbarActivity extends EhActivity {
 
     @Override
     protected int getThemeResId(int theme) {
+        if (theme == Settings.THEME_SYSTEM_DEFAULT) {
+            int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            switch (currentNightMode) {
+                case Configuration.UI_MODE_NIGHT_NO:
+                default:
+                    theme = Settings.THEME_LIGHT;
+                    break;
+                case Configuration.UI_MODE_NIGHT_YES:
+                    theme = Settings.THEME_DARK;
+            }
+        }
+
         switch (theme) {
             case Settings.THEME_LIGHT:
             default:
                 return R.style.AppTheme_Toolbar;
             case Settings.THEME_DARK:
-                return R.style.AppTheme_Toolbar_Dark;
-            case Settings.THEME_BLACK:
-                return R.style.AppTheme_Toolbar_Black;
+                switch (Settings.getDarkThemeVariant()) {
+                    case Settings.DARK_THEME_VARIANT_DARK:
+                    default:
+                        return R.style.AppTheme_Toolbar_Dark;
+                    case Settings.DARK_THEME_VARIANT_BLACK:
+                        return R.style.AppTheme_Toolbar_Black;
+                }
         }
     }
 

@@ -675,7 +675,8 @@
     <string name="settings_eh_theme">Thème</string>
     <string name="settings_eh_theme_light">Blanc</string>
     <string name="settings_eh_theme_dark">Gris</string>
-    <string name="settings_eh_theme_black">Noir</string>
+    <string name="settings_eh_dark_theme_variant_dark">Gris</string>
+    <string name="settings_eh_dark_theme_variant_black">Noir</string>
     <string name="settings_eh_apply_nav_bar_theme_color">Appli. la couleur du théme à la barre de navi.</string>
     <string name="settings_about_donate_message">Faire un don ne verrouille aucune fonction cachée, mais vous m\'aiderez à maintenir cette application.</string>
     <string name="settings_about_donate_alipay">Alipay</string>

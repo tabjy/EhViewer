@@ -17,6 +17,7 @@
 package com.hippo.ehviewer.ui;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -92,5 +93,14 @@ public abstract class EhActivity extends AppCompatActivity {
         }
 
         super.attachBaseContext(newBase);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if (Settings.getTheme() == Settings.THEME_SYSTEM_DEFAULT) {
+            ((EhApplication) getApplication()).recreate();
+        }
     }
 }

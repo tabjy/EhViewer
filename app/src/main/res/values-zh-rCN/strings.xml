@@ -22,7 +22,6 @@
     <!-- Theme -->
     <string name="theme_light">亮色主题</string>
     <string name="theme_dark">暗色主题</string>
-    <string name="theme_black">黑色主题</string>
 
     <string name="homepage">主页</string>
     <string name="subscription">订阅</string>
@@ -434,7 +433,9 @@
     <string name="settings_eh_theme">主题</string>
     <string name="settings_eh_theme_light">亮色</string>
     <string name="settings_eh_theme_dark">暗色</string>
-    <string name="settings_eh_theme_black">黑色</string>
+    <string name="settings_eh_theme_system_default">系统默认</string>
+    <string name="settings_eh_dark_theme_variant_dark">暗色</string>
+    <string name="settings_eh_dark_theme_variant_black">黑色</string>
     <string name="settings_eh_apply_nav_bar_theme_color">导航栏应用主题配色</string>
     <string name="settings_eh_gallery_site">画廊站点</string>
     <string name="settings_eh_launch_page">启动页</string>

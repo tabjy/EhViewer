@@ -676,7 +676,9 @@
      <string name="settings_eh_theme">テーマ</string>
     <string name="settings_eh_theme_light">ライト</string>
     <string name="settings_eh_theme_dark">ダーク</string>
-    <string name="settings_eh_theme_black">ブラック</string>
+    <string name="settings_eh_theme_system_default">システム デフォルト</string>
+    <string name="settings_eh_dark_theme_variant_dark">ダーク</string>
+    <string name="settings_eh_dark_theme_variant_black">ブラック</string>
     <string name="settings_eh_apply_nav_bar_theme_color">ﾃｰﾏｶﾗｰをﾅﾋﾞｹﾞｰｼｮﾝﾊﾞｰに適用</string>
     <string name="settings_about_donate_message">寄付していただいても追加の機能を解禁したりしませんが、このアプリの開発を助けられます</string>
     <string name="settings_about_donate_alipay">Alipay</string>

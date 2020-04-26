@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -184,14 +185,30 @@ public class GalleryActivity extends EhActivity implements SeekBar.OnSeekBarChan
 
     @Override
     protected int getThemeResId(int theme) {
+        if (theme == Settings.THEME_SYSTEM_DEFAULT) {
+            int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            switch (currentNightMode) {
+                case Configuration.UI_MODE_NIGHT_NO:
+                default:
+                    theme = Settings.THEME_LIGHT;
+                    break;
+                case Configuration.UI_MODE_NIGHT_YES:
+                    theme = Settings.THEME_DARK;
+            }
+        }
+
         switch (theme) {
             case Settings.THEME_LIGHT:
             default:
                 return R.style.AppTheme_Gallery;
             case Settings.THEME_DARK:
-                return R.style.AppTheme_Gallery_Dark;
-            case Settings.THEME_BLACK:
-                return R.style.AppTheme_Gallery_Black;
+                switch (Settings.getDarkThemeVariant()) {
+                    case Settings.DARK_THEME_VARIANT_DARK:
+                    default:
+                        return R.style.AppTheme_Gallery_Dark;
+                    case Settings.DARK_THEME_VARIANT_BLACK:
+                        return R.style.AppTheme_Gallery_Black;
+                }
         }
     }
 

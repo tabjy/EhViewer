@@ -250,7 +250,7 @@ public class Settings {
     public static final String KEY_THEME = "theme";
     public static final int THEME_LIGHT = 0;
     public static final int THEME_DARK = 1;
-    public static final int THEME_BLACK = 2;
+    public static final int THEME_SYSTEM_DEFAULT = 2;
     private static final int DEFAULT_THEME = THEME_LIGHT;
 
     public static int getTheme() {
@@ -259,6 +259,15 @@ public class Settings {
 
     public static void putTheme(int theme) {
         putIntToStr(KEY_THEME, theme);
+    }
+
+    public static final String KEY_DARK_THEME_VARIANT = "dark_theme_variant";
+    public static final int DARK_THEME_VARIANT_DARK = 0;
+    public static final int DARK_THEME_VARIANT_BLACK = 1;
+    public static final int DEFAULT_DARK_THEME_VARIANT = 0;
+
+    public static int getDarkThemeVariant() {
+        return getIntFromStr(KEY_DARK_THEME_VARIANT, DEFAULT_DARK_THEME_VARIANT);
     }
 
     public static final String KEY_APPLY_NAV_BAR_THEME_COLOR = "apply_nav_bar_theme_color";

@@ -18,12 +18,14 @@ package com.hippo.ehviewer.ui;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import com.hippo.ehviewer.EhApplication;
 import com.hippo.ehviewer.R;
 import com.hippo.ehviewer.Settings;
 import com.hippo.ehviewer.ui.fragment.AboutFragment;
@@ -50,15 +52,31 @@ public final class SettingsActivity extends EhPreferenceActivity {
 
     @Override
     protected int getThemeResId(int theme) {
-      switch (theme) {
-        case Settings.THEME_LIGHT:
-        default:
-          return R.style.AppTheme_Settings;
-        case Settings.THEME_DARK:
-          return R.style.AppTheme_Settings_Dark;
-        case Settings.THEME_BLACK:
-          return R.style.AppTheme_Settings_Black;
-      }
+        if (theme == Settings.THEME_SYSTEM_DEFAULT) {
+            int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            switch (currentNightMode) {
+                case Configuration.UI_MODE_NIGHT_NO:
+                default:
+                    theme = Settings.THEME_LIGHT;
+                    break;
+                case Configuration.UI_MODE_NIGHT_YES:
+                    theme = Settings.THEME_DARK;
+            }
+        }
+
+        switch (theme) {
+            case Settings.THEME_LIGHT:
+            default:
+                return R.style.AppTheme_Settings;
+            case Settings.THEME_DARK:
+                switch (Settings.getDarkThemeVariant()) {
+                    case Settings.DARK_THEME_VARIANT_DARK:
+                    default:
+                        return R.style.AppTheme_Settings_Dark;
+                    case Settings.DARK_THEME_VARIANT_BLACK:
+                        return R.style.AppTheme_Settings_Black;
+                }
+        }
     }
 
     private void setActionBarUpIndicator(Drawable drawable) {
@@ -126,6 +144,15 @@ public final class SettingsActivity extends EhPreferenceActivity {
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if (Settings.getTheme() == Settings.THEME_SYSTEM_DEFAULT) {
+            ((EhApplication) getApplication()).recreate();
         }
     }
 }
