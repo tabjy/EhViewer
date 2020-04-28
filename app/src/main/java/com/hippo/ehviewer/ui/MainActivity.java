@@ -83,6 +83,7 @@ import com.hippo.scene.SceneFragment;
 import com.hippo.scene.StageActivity;
 import com.hippo.unifile.UniFile;
 import com.hippo.util.BitmapUtils;
+import com.hippo.util.IoThreadPoolExecutor;
 import com.hippo.util.PermissionRequester;
 import com.hippo.widget.LoadImageView;
 import com.hippo.yorozuya.IOUtils;
@@ -381,7 +382,7 @@ public final class MainActivity extends StageActivity
             onRestore(savedInstanceState);
         }
 
-        EhTagDatabase.update(this);
+        IoThreadPoolExecutor.getInstance().execute(() -> EhTagDatabase.update(this));
     }
 
     private String getThemeText() {

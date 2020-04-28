@@ -133,6 +133,11 @@
         android:summary="@string/settings_eh_show_tag_translations_summary"
         android:defaultValue="false"/>
 
+    <Preference
+        android:key="check_for_tag_translation_update"
+        android:title="@string/settings_eh_check_for_tag_translations_update"
+        android:summary="@string/settings_eh_tag_translations_version"/>
+
     <com.hippo.preference.UrlPreference
         android:key="tag_translations_source"
         android:title="@string/settings_eh_tag_translations_source"
