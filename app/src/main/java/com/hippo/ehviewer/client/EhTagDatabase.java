@@ -56,7 +56,7 @@ import okio.BufferedSource;
 import okio.Okio;
 
 public class EhTagDatabase {
-    public static final String NAMESPACE_ROW = "row";
+    public static final String NAMESPACE_ROWS = "rows";
     public static final String NAMESPACE_ARTIST = "artist";
     public static final String NAMESPACE_CHARACTER = "character";
     public static final String NAMESPACE_FEMALE = "female";

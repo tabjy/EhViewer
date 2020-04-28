@@ -888,7 +888,7 @@ public class GalleryDetailScene extends BaseScene implements View.OnClickListene
 
             String readableTagName = null;
             if (ehTags != null) {
-                readableTagName = ehTags.getTranslation(EhTagDatabase.NAMESPACE_ROW, tg.groupName);
+                readableTagName = ehTags.getTranslation(EhTagDatabase.NAMESPACE_ROWS, tg.groupName);
             }
 
             TextView tgName = (TextView) inflater.inflate(R.layout.item_gallery_tag, ll, false);
